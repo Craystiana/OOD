@@ -4,7 +4,7 @@ public class Stock  {
 
 protected Product product;
 protected int nr_products;
-
+//this is a change to see if i can commit with git command line
 Stock(String name, String id, int weight, int price, int nr_products)
 {
 	product = new Product(name, id, weight, price);
