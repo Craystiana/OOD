@@ -2,9 +2,9 @@ package Store_Application;
 
 public class Stock  { 
 
-protected Product product;
-protected int nr_products;
-//this is a change to see if i can commit with git command line
+private Product product;
+private int nr_products;
+
 Stock(String name, String id, int weight, int price, int nr_products)
 {
 	product = new Product(name, id, weight, price);
@@ -42,5 +42,10 @@ public boolean available(int quantity)
 public String GetName()
 {
 	return  product.GetName();
+}
+
+public int GetNrProducts()
+{
+	return nr_products;
 }
 }

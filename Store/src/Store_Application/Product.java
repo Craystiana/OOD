@@ -1,10 +1,10 @@
 package Store_Application;
 public class Product {
 	
-protected String name;
-protected String id;
-protected int weight;
-protected int price;
+private String name;
+private String id;
+private int weight;
+private int price;
 
 Product(String name, String id, int weight, int price)
 {
@@ -31,4 +31,18 @@ public String GetName()
 	return name;
 }
 
+public String GetId()
+{
+	return id;
+}
+
+public int GetWeight()
+{
+	return weight;
+}
+
+public int GetPrice()
+{
+	return price;
+}
 }

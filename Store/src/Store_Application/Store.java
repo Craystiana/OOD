@@ -4,9 +4,8 @@ import java.util.Vector;
 
 public class Store {
 
-protected Vector<Stock> stock = new Vector<>();
-protected String store_name;
-protected String store_location;
+private Vector<Stock> stock = new Vector<>();
+private String store_name;
 
 public void AddNewProduct(String name, String id, int weight, int price, int nr_products)
 {
@@ -20,7 +19,7 @@ public boolean CheckStock(String name)
 	{
 		if(it.GetName()==name)
 		{
-			if(it.nr_products>0)
+			if(it.GetNrProducts()>0)
 				return true;
 		}
 	}
@@ -36,5 +35,10 @@ public void RemoveProduct(String name)
 			stock.remove(it);
 		}
 	}
+}
+
+public String GetStoreName()
+{
+	return store_name;
 }
 }
