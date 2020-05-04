@@ -2,7 +2,7 @@ package pluginsapplication;
 
 import java.util.ArrayList;
 import interfaces.IShape;
-import interfaces.ShapeList;
+import pluginsapplication.ShapeList;
 
 public class ApplicationMenu {
 	private PluginManager pluginMan;
@@ -34,10 +34,6 @@ public class ApplicationMenu {
 
 	public void execute() {
 		mainMenu.execute();
-	}
-	
-	public ArrayList<IMenuItem> getMenu(){
-		return mainMenu.getMenuItems();
 	}
 	
 	public ShapeList getShapeList()

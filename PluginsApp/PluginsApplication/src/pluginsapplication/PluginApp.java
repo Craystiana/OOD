@@ -14,13 +14,14 @@ public class PluginApp {
 	private static Menu initializeMainMenu() {
 		ArrayList<IMenuItem> mainMenuItems = new ArrayList<IMenuItem>(); 
 		PluginManager pluginMan = new PluginManager();
-       
 	    ApplicationMenu menu = new ApplicationMenu(pluginMan);
 	    menu.load();
-
-		mainMenuItems.add(new Menu("Add", 1, menu.getMenu()));
-		mainMenuItems.add(new Menu("Remove", 2, menu.getMenu()));
-		mainMenuItems.add(new Menu("Modify", 3, menu.getMenu()));
+	  
+		mainMenuItems.add(new MenuItem("Add", 1, (parameters) ->  {
+		    menu.execute();
+		}));
+		mainMenuItems.add(new MenuItem("Remove", 2, null));
+		mainMenuItems.add(new MenuItem("Modify", 3, null));
 		mainMenuItems.add(new MenuItem("View", 4, (parameters) -> {
 			menu.getShapeList().draw();
 		}));

@@ -40,7 +40,7 @@ public class Square implements IShape{
 	public void read() {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter the coordinates of the left up point: ");
-		System.out.print("Enter X =");
+		System.out.print("Enter X = ");
 		int x1 = input.nextInt();
 		System.out.print("Enter Y = ");
 		int y1 = input.nextInt();

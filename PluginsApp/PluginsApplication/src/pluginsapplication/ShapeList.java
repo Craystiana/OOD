@@ -1,6 +1,8 @@
-package interfaces;
+package pluginsapplication;
 
 import java.util.ArrayList;
+
+import interfaces.IShape;
 
 public class ShapeList implements IShape{
 	private ArrayList<IShape> shapesList = new ArrayList<IShape>();
@@ -45,4 +47,5 @@ public class ShapeList implements IShape{
 		else
 			return -1;
 	}
+
 }
