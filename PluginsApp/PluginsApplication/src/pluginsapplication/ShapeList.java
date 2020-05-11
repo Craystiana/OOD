@@ -2,13 +2,19 @@ package pluginsapplication;
 
 import java.util.ArrayList;
 
+import interfaces.IObserver;
 import interfaces.IShape;
+import shared.Observable;
+import shared.Point;
 
-public class ShapeList implements IShape{
+public class ShapeList implements IShape, IObserver{
 	private ArrayList<IShape> shapesList = new ArrayList<IShape>();
+	private int width = 100;
+	private int lenght = 100;
 
 	@Override
 	public void draw() {
+		System.out.println("Board: Width = " + width + " Lenght = " + lenght);
 		for (IShape shape : shapesList)	{
 			shape.draw();
 		}
@@ -48,4 +54,25 @@ public class ShapeList implements IShape{
 			return -1;
 	}
 
+	@Override
+	public void notification(Object x) {
+		// TODO Auto-generated method stub
+		Point Rectangle = ((IShape) x).getBoundingRectangle();
+		if(Rectangle.X1()>width)
+			width = Rectangle.X1();
+		if(Rectangle.Y1() > lenght)
+			lenght = Rectangle.Y1();
+	}
+
+	@Override
+	public Point getBoundingRectangle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void registerObserver(IObserver observer) {
+		// TODO Auto-generated method stub
+		
+	}
 }

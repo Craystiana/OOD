@@ -3,8 +3,10 @@ package rhombus;
 import java.util.Scanner;
 
 import interfaces.IShape;
+import shared.Point;
+import shared.Observable;
 
-public class Rhombus implements IShape{
+public class Rhombus extends Observable implements IShape{
 	private int UpPointX;
 	private int UpPointY;
 	private int VerticalDiagonal;
@@ -53,4 +55,12 @@ public class Rhombus implements IShape{
 		this.VerticalDiagonal = vd;
 		this.HorizontalDiagonal = hd;
 	}
+
+	@Override
+	public shared.Point getBoundingRectangle() {
+		Point point = new Point(UpPointX + HorizontalDiagonal/2, UpPointY+ VerticalDiagonal/2);
+		return point;
+	}
+	
+	
 }

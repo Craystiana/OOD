@@ -26,6 +26,8 @@ public class ApplicationMenu {
 				IShape shape = currentPlugin.getShape();
 				shape.read();
 				shapeList.addShape(shape);
+				//shapeList.notification(shape);
+				shape.registerObserver(shapeList);
 			});
 			menuItems.add(currentItem);
 		}

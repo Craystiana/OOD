@@ -1,10 +1,11 @@
 package circle;
-
 import java.util.Scanner;
 
 import interfaces.IShape;
+import shared.Observable;
+import shared.Point;
 
-public class Circle implements IShape{
+public class Circle extends Observable implements IShape{
 	private int originx;
 	private int originy;
 	private int radius;
@@ -45,5 +46,11 @@ public class Circle implements IShape{
 		this.originx = x;
 		this.originy = y;
 		this.radius = radius;
+	}
+
+	@Override
+	public Point getBoundingRectangle() {
+		Point point = new Point(originx + radius, originy + radius);
+		return point;
 	}
 }

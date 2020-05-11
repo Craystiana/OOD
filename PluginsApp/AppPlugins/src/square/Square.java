@@ -3,8 +3,10 @@ package square;
 import java.util.Scanner;
 
 import interfaces.IShape;
+import shared.Point;
+import shared.Observable;
 
-public class Square implements IShape{
+public class Square extends Observable implements IShape{
 	private int LeftUpX;
 	private int LeftUpY;
 	private int RightDownX;
@@ -54,4 +56,21 @@ public class Square implements IShape{
 		this.RightDownX = x2;
 		this.RightDownY = y2;
 	}
+
+	@Override
+	public Point getBoundingRectangle() {
+		int x;
+		if(LeftUpX > RightDownX)
+			x=LeftUpX;
+		else
+			x=RightDownX;
+		int y;
+		if(LeftUpY>RightDownY)
+			y=LeftUpY;
+		else
+			y=RightDownY;
+		Point point = new Point(x,y);
+		return point;
+	}
+	
 }

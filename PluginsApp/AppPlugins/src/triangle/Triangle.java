@@ -3,8 +3,10 @@ package triangle;
 import java.util.Scanner;
 
 import interfaces.IShape;
+import shared.Point;
+import shared.Observable;
 
-public class Triangle implements IShape{
+public class Triangle extends Observable implements IShape{
 	private int UpPointX;
 	private int UpPointY;
 	private int LeftDownX;
@@ -68,5 +70,20 @@ public class Triangle implements IShape{
 		this.LeftDownY = y2;
 		this.RightDownX = x3;
 		this.RightDownY = y3;
+	}
+	
+	@Override
+	public Point getBoundingRectangle() {
+		int x = UpPointX, y=UpPointY;
+		if(x<RightDownX)
+			x=RightDownX;
+		if(x<LeftDownX)
+			x=LeftDownX;
+		if(y<RightDownY)
+			y=RightDownY;
+		if(y<LeftDownY)
+			y=LeftDownY;
+		Point point = new Point(x,y);
+		return point;
 	}
 }
